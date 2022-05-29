@@ -1,0 +1,37 @@
+import java.util.*;
+class pp1
+{
+    public void disp()
+    {
+        Scanner sc =new Scanner(System.in);
+        int N=sc.nextInt();
+        String s=Integer.toString(N);
+        int p=N; int c=0;
+        int l=s.length();
+        for(int i=0;i<l;i++)
+        {
+            char r=s.charAt(0);
+            s=s.substring(1,l)+r;
+            System.out.println(s);
+            if(prime(s)==true)
+            c++;
+        }
+        if (c==l)
+        System.out.println(p+" IS A CIRCULAR NUMBER");
+        }
+    boolean prime(String x) 
+    {
+        Integer a=Integer.valueOf(x); 
+        int r=0;
+        for(int i=1;i<=a;i++)
+        {
+            int j=a%i;
+            if(j==0)
+            r++;
+        }
+        if(r==2)
+        return true;
+        else 
+        return false;
+    }
+}
