@@ -1,0 +1,70 @@
+class jkl
+{
+    public void disp(String a)
+    {
+        String s=" ";
+        for(int i=0;i<a.length();i++)
+        {
+            char w=a.charAt(i);
+            int c=(int)w;
+            if(w>=65&&w<=90||w>=97&&w<=122)
+            {
+                if(c>=65&&c<=77||c>=97&&c<=109)
+                s=s+(char)(c+13);
+                else
+                s=s+(char)(c-13);
+            }
+            else
+            s=s+w;
+        }
+        System.out.println(s);
+    }
+}
+2. class p4
+{
+    public void disp(int a)
+    {
+        int c=0,i=0,m=a,j=0;
+        while(a>0)
+        {
+            int p=a%10;
+            a=a/10;
+            c++;
+        }
+        double x=Math.pow(10,c-1);
+        int y=(int)x;
+        while(i<c)
+        {
+            int r=m%y;
+            int p=m/y;
+            m=r*10+p;
+            i++;
+            if(prime(m)==true)
+            j++;
+        }
+        if(j>=3)
+        System.out.println("Circular prime");
+        else
+        System.out.println("not");
+    }
+    boolean prime(int x)
+    {
+        int c=0;
+        for(int i=1;i<=x;i++)
+        {
+            if(x%i==0)
+            c++;
+        }
+        if(c==2)
+        return true;
+        else
+        return false;
+    }
+}
+        
+        
+    
+
+        
+        
+                
